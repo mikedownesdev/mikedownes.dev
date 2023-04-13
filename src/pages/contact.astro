@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Contact | Mike Downes" description="Contact Mike Downes">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="Contact"
+				tagline="Feel free to connect with me in any of the following ways."
+			>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Methods</h2>
+				<div class="content">
+					<p>
+						<a href="mailto:mikedownes.dev@gmail.com">Email me</a>
+					</p>
+					<!-- Calendly link widget begin -->
+					<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+					<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+					<a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mikedownesdev/30min'});return false;">Schedule a Chat</a>
+					<!-- Calendly link widget end -->
+					<p>
+						<a>Add me on Slack:</a>
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
