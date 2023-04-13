@@ -81,14 +81,31 @@ const projects = (await getCollection('work'))
 
 			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
+					<h3>Testimonials</h3>
 					<p>
-						I have been fortunate enough to recieve praise for my work in several publications. Take
-						a look below to learn more.
+						I pride myself on ensuring our working relationship is one you'll cherish
 					</p>
 				</header>
 
-				<div class="gallery">
+				<div class="testimonials-gallery">
+					<div class="testimonial">
+						<blockquote>
+							<p>
+								“I've been dreaming of a new website for years - 
+								one with complex functionality that could finally 
+								merchandise our extensive product catalog in a 
+								way that is intuitive to our customer. Michael 
+								finally brought this vision to life for us.”
+							</p>
+						</blockquote>
+						<cite>
+							<span class="name">Cameron Armstrong | </span>
+							<span class="title">CEO, Kitty & Vibe</span>
+						</cite>
+					</div>
+				</div>
+
+				<!-- <div class="gallery">
 					<Grid variant="small">
 						{
 							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
@@ -98,7 +115,7 @@ const projects = (await getCollection('work'))
 							))
 						}
 					</Grid>
-				</div>
+				</div> -->
 			</section>
 		</main>
 
